@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,8 +28,8 @@ public class Farmers {
     private float contact;
     @Column(name = "accno")
     private String accno;
-    @Column(name = "brunch")
-    private String brunch;
+    @ManyToOne
+    private Branches branch;
 
     public long getId() {
         return this.id;
@@ -94,12 +95,12 @@ public class Farmers {
         this.accno = accno;
     }
 
-    public String getBrunch() {
-        return this.brunch;
+    public Branches getBranch() {
+        return this.branch;
     }
 
-    public void setBrunch(String brunch) {
-        this.brunch = brunch;
+    public void setBranch(Branches branch) {
+        this.branch = branch;
     }
 
 }

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +22,10 @@ public class Employees {
     private String email;
     @Column(name = "contact")
     private float contact;
+    @ManyToOne
+    private Branches branch;
+    @ManyToOne
+    private JobRole jobrole;
 
     public Long getId() {
         return this.id;
@@ -30,12 +35,12 @@ public class Employees {
         this.id = id;
     }
 
-    public String getEmployeename() {
+    public String getEmployeeName() {
         return this.employeeName;
     }
 
-    public void setEmployeename(String employeename) {
-        this.employeeName = employeename;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
     public String getPassword() {
@@ -60,6 +65,22 @@ public class Employees {
 
     public void setContact(float contact) {
         this.contact = contact;
+    }
+
+    public Branches getBranch() {
+        return this.branch;
+    }
+
+    public void setBranch(Branches branch) {
+        this.branch = branch;
+    }
+
+    public JobRole getJobrole() {
+        return this.jobrole;
+    }
+
+    public void setJobrole(JobRole jobrole) {
+        this.jobrole = jobrole;
     }
 
 }
