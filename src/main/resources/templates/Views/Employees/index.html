@@ -130,7 +130,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Employees</h1>
-                        <a th:href="@{/employees/create}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50 pr-2"></i> Add Manager</a>
+                        
+                        <a th:href="@{/employees/create}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50 pr-2"></i> Add Employee</a>
                     </div>
 
                     <!-- Content Row -->
@@ -170,6 +171,7 @@
                                             <td class="actions" data-label="Actions">
                                                 <i class="fas fa-trash delete"></i>
                                                 <a th:href="@{/employees/update}"><i class="fas fa-pencil-alt edit"></i></a>
+                                                <a th:href="@{/employees/assign}"><i class="fas fa-user-tag add"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -182,6 +184,7 @@
                                             <td class="actions" data-label="Actions">
                                                 <i class="fas fa-trash delete"></i>
                                                 <a th:href="@{/employees/update}"><i class="fas fa-pencil-alt edit"></i></a>
+                                                <a th:href="@{/employees/assign}"><i class="fas fa-user-tag add"></i></a>
                                             </td>
                                         </tr>
                                    

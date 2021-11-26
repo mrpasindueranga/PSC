@@ -19,4 +19,9 @@ public class EmployeeController {
     public String update() {
         return "Views/Employees/update";
     }
+
+    @GetMapping("/employees/assign")
+    public String assign() {
+        return "Views/Employees/assign";
+    }
 }
