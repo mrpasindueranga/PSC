@@ -14,7 +14,7 @@ public class JobRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "designation")
-    private long designation;
+    private String designation;
 
     public long getId() {
         return this.id;
@@ -24,11 +24,12 @@ public class JobRole {
         this.id = id;
     }
 
-    public long getDesignation() {
+    public String getDesignation() {
         return this.designation;
     }
 
-    public void setDesignation(long designation) {
+    public void setDesignation(String designation) {
         this.designation = designation;
     }
+
 }
