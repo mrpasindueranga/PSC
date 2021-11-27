@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PriceList {
-    @GetMapping("/pricelist")
+    @GetMapping("/paddy")
     public String index() {
-        return "Views/Pricelist/index";
+        return "Views/Paddy/index";
     }
 
-    @GetMapping("/pricelist/create")
+    @GetMapping("/paddy/create")
     public String create() {
-        return "Views/Pricelist/create";
+        return "Views/Paddy/create";
     }
 
-    @GetMapping("/pricelist/update")
+    @GetMapping("/paddy/update")
     public String update() {
-        return "Views/Pricelist/update";
+        return "Views/Paddy/update";
     }
 }

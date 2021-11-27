@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Branches {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private Integer id;
   @Column(name = "branch_name")
   private String branchName;
   @Column(name = "address")
@@ -31,14 +31,14 @@ public class Branches {
   /**
    * @return long return the id
    */
-  public long getId() {
+  public Integer getId() {
     return id;
   }
 
   /**
    * @param id the id to set
    */
-  public void setId(long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
