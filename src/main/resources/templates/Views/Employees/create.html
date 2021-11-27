@@ -140,38 +140,44 @@
 
                         <!-- Code Here -->
                         <form>
-                         <!-- 2 column grid layout with text inputs for the first and last names -->
-                         <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-outline">
-                                <input type="text" id="form6Example1" placeholder="Employee Name" class="form-control" />
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="form-outline">
-                                <input type="text" id="form6Example2" placeholder="Password" class="form-control"/>
-                              </div>
-                            </div>
-                          </div>
 
-                    
-                        
-                          <!-- Text input -->
-                          <div class="form-outline mb-4">
-                            <input type="text" id="form6Example3" placeholder="Email Address" class="form-control" />
-                          </div>
-                        
-                          <!-- Number input -->
-                          <div class="form-outline mb-4">
-                            <input type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
-                          </div>
-                          
-                         
-                         
-                        
-                         <!-- Submit button -->
-                         <button type="submit" class="btn btn-primary btn-block mb-4">Add Manager</button>
-                       </form>
+                            <div class="form-outline mb-4">
+                                <input  type="text" placeholder="Employee Name" class="form-control"/>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input  type="email" placeholder="Email" class="form-control"/>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input  type="text" placeholder="Contact Number" class="form-control">
+                            </div>
+
+                            <div class="form-outline mb-3">
+                                <input  type="password" placeholder="Password" class="form-control"/>
+                            </div>
+
+                            <div class="=form-outline mb-3 form-group row pl-lg-2 pr-lg-3">
+                                <label class="p-1">Employee Role :</label>
+                                <select class="custom-select" >
+                                    <option value="Finance-Officer">Manager</option>
+                                    <option value="Finance-Officer">Finance Officer</option>
+                                    <option value="Collection-Officer">Collection Officer</option>
+                                    <option value="Store-Keeper">Store Keeper</option>
+                                    <option value="Clerk">Clerk</option>
+                                </select>
+                            </div>
+
+                            <div class="=form-outline mb-4 form-group row pl-lg-2 pr-lg-3">
+                                <label class="p-1">Employee Branch :</label>
+                                <select class="custom-select" >
+                                    <option th:each="branch : ${branches}" th:value="${branch.id}" th:text="${branch.branchName}"></option>
+                                </select>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-2">Add Employee</button>
+                        </form>
 
                        <!-- end of code here -->
 

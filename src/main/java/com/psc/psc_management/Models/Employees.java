@@ -1,10 +1,12 @@
 package com.psc.psc_management.Models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -13,7 +15,7 @@ import javax.persistence.Table;
 public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(name = "employee_name")
     private String employeeName;
     @Column(name = "password")
@@ -22,16 +24,15 @@ public class Employees {
     private String email;
     @Column(name = "contact")
     private float contact;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "branch_id")
     private Branches branch;
-    @ManyToOne
-    private JobRole jobrole;
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -73,14 +74,6 @@ public class Employees {
 
     public void setBranch(Branches branch) {
         this.branch = branch;
-    }
-
-    public JobRole getJobrole() {
-        return this.jobrole;
-    }
-
-    public void setJobrole(JobRole jobrole) {
-        this.jobrole = jobrole;
     }
 
 }

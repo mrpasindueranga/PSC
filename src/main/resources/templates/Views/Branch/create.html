@@ -129,41 +129,56 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Assign Designation</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Create Brunch</h1>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form>
-                        <!-- Text input -->
-                        <div class="form-outline mb-4">
-                            <select name="employee" id="form6Example3"  class="form-control">
-                                <option value="">Select Employee</option>
-                            </select>
-                        </div>
+                       <form  th:action="@{/branches/save}" th:object="${branch}" method="post">
 
                         <!-- Text input -->
                         <div class="form-outline mb-4">
-                         <select name="brunch" id="form6Example3"  class="form-control">
-                             <option value="">Select Branch</option>
-                         </select>
+                         <input th:field="*{branchName}" type="text" id="form6Example3" placeholder="Brunch Name" class="form-control" />
                         </div>
                       
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                          <input th:field="*{address}" type="text" id="form6Example3" placeholder="Address" class="form-control" />
+                        </div>
                       
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                          <select name="designation" id="form6Example5"  class="form-control">
-                            <option value="">Select Designation</option>
-                         </select>
-                          
+                          <input th:field="*{email}" type="email" id="form6Example5" placeholder="Email Address" class="form-control" />
                         </div>
                       
-                       
+                        <!-- Number input -->
+                        <div class="form-outline mb-4">
+                          <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
+                        </div>
+                        
+                        <!-- limitation -->
+                        <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <input th:field="*{capacity}" type="number" id="form6Example7" placeholder="Storage Capacity (Kg)" class="form-control" />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline">
+                                <input th:field="*{cropLimit}" type="number" id="form6Example8" placeholder="Crop Limits per farmer (Kg)" class="form-control" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Number input -->
+                        <div class="form-outline mb-4">
+                            <input th:field="*{budget}" type="number" id="form6Example6" placeholder="Monthly Budget (Rs)" class="form-control" />
+                          </div>
                        
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Assign Designation</button>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Create Brunch</button>
                       </form>
 
                       <!-- end of code here -->

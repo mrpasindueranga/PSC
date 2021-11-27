@@ -1,10 +1,15 @@
 package com.psc.psc_management.Models;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,116 +33,79 @@ public class Branches {
   @Column(name = "budget")
   private Float budget;
 
-  /**
-   * @return long return the id
-   */
+  @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private Set<Employees> employees;
+
   public Integer getId() {
-    return id;
+    return this.id;
   }
 
-  /**
-   * @param id the id to set
-   */
   public void setId(Integer id) {
     this.id = id;
   }
 
-  /**
-   * @return String return the branchName
-   */
   public String getBranchName() {
-    return branchName;
+    return this.branchName;
   }
 
-  /**
-   * @param branchName the branchName to set
-   */
   public void setBranchName(String branchName) {
     this.branchName = branchName;
   }
 
-  /**
-   * @return String return the address
-   */
   public String getAddress() {
-    return address;
+    return this.address;
   }
 
-  /**
-   * @param address the address to set
-   */
   public void setAddress(String address) {
     this.address = address;
   }
 
-  /**
-   * @return String return the email
-   */
   public String getEmail() {
-    return email;
+    return this.email;
   }
 
-  /**
-   * @param email the email to set
-   */
   public void setEmail(String email) {
     this.email = email;
   }
 
-  /**
-   * @return String return the contact
-   */
   public String getContact() {
-    return contact;
+    return this.contact;
   }
 
-  /**
-   * @param contact the contact to set
-   */
   public void setContact(String contact) {
     this.contact = contact;
   }
 
-  /**
-   * @return Float return the capacity
-   */
   public Float getCapacity() {
-    return capacity;
+    return this.capacity;
   }
 
-  /**
-   * @param capacity the capacity to set
-   */
   public void setCapacity(Float capacity) {
     this.capacity = capacity;
   }
 
-  /**
-   * @return Float return the cropLimit
-   */
   public Float getCropLimit() {
-    return cropLimit;
+    return this.cropLimit;
   }
 
-  /**
-   * @param cropLimit the cropLimit to set
-   */
   public void setCropLimit(Float cropLimit) {
     this.cropLimit = cropLimit;
   }
 
-  /**
-   * @return Float return the budget
-   */
   public Float getBudget() {
-    return budget;
+    return this.budget;
   }
 
-  /**
-   * @param budget the budget to set
-   */
   public void setBudget(Float budget) {
     this.budget = budget;
+  }
+
+  public Set<Employees> getEmployees() {
+    return this.employees;
+  }
+
+  public void setEmployees(Set<Employees> employees) {
+    this.employees = employees;
   }
 
 }

@@ -5,17 +5,20 @@ import com.psc.psc_management.Repositories.BranchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-// import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class BrunchService {
+public class BranchService {
     @Autowired
     private BranchRepository repository;
 
-    // public List<Branches> listEmployeesByBranch(String branch){
-    // return (List<Branches>) repository.findByBranch(branch);
-    // }
+    public List<Branches> getAll() {
+        List<Branches> branches = new ArrayList<Branches>();
+        repository.findAll().forEach(branch -> branches.add(branch));
+        return branches;
+    }
 
     public void save(Branches branch) {
         repository.save(branch);
