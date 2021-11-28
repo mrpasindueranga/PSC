@@ -1,5 +1,7 @@
 package com.psc.psc_management.Controllers;
 
+import java.util.List;
+
 import com.psc.psc_management.Models.Employees;
 import com.psc.psc_management.Services.BranchService;
 import com.psc.psc_management.Services.EmployeeService;
@@ -18,7 +20,9 @@ public class EmployeeController {
     private BranchService branchService;
 
     @GetMapping("/employees")
-    public String index() {
+    public String index(Model model) {
+        List<Employees> employees = employeeService.getAll();
+        model.addAttribute("employees", employees);
         return "Views/Employees/index";
     }
 
@@ -29,9 +33,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees/save")
-    public void save(Employees employee) {
-        System.out.println(employee.getBranch());
-        // return "/Views/Employees/index";
+    public String save(Employees employee) {
+        employeeService.save(employee);
+        return "/Views/Employees/index";
     }
 
     @GetMapping("/employees/update")
