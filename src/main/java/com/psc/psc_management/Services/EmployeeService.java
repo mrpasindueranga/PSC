@@ -1,5 +1,8 @@
 package com.psc.psc_management.Services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.psc.psc_management.Models.Employees;
 import com.psc.psc_management.Repositories.EmployeeRepository;
 
@@ -13,5 +16,11 @@ public class EmployeeService {
 
     public void save(Employees employee) {
         repository.save(employee);
+    }
+
+    public List<Employees> getAll() {
+        List<Employees> employees = new ArrayList<Employees>();
+        repository.findAll().forEach(employee -> employees.add(employee));
+        return employees;
     }
 }
