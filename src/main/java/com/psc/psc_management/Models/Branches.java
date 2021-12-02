@@ -36,6 +36,9 @@ public class Branches {
   @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<Employees> employees;
 
+  @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private Set<Farmers> farmers;
+
   public Integer getId() {
     return this.id;
   }
@@ -106,6 +109,14 @@ public class Branches {
 
   public void setEmployees(Set<Employees> employees) {
     this.employees = employees;
+  }
+
+  public Set<Farmers> getFarmers() {
+    return this.farmers;
+  }
+
+  public void setFarmers(Set<Farmers> farmers) {
+    this.farmers = farmers;
   }
 
 }

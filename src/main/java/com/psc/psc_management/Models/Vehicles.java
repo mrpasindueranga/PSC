@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Vehicles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(name = "vehicle_number")
     private String vehicleNumber;
     @Column(name = "capacity")
@@ -20,13 +20,13 @@ public class Vehicles {
     @Column(name = "type")
     private String type;
     @Column(name = "colour")
-    private float colour;
+    private String colour;
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,11 +54,11 @@ public class Vehicles {
         this.type = type;
     }
 
-    public float getColour() {
+    public String getColour() {
         return this.colour;
     }
 
-    public void setColour(float colour) {
+    public void setColour(String colour) {
         this.colour = colour;
     }
 }

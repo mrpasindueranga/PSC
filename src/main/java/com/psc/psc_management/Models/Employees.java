@@ -24,6 +24,8 @@ public class Employees {
     private String email;
     @Column(name = "contact")
     private float contact;
+    @Column(name = "role")
+    private String role;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "branch_id")
     private Branches branch;
@@ -34,6 +36,14 @@ public class Employees {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getEmployeeName() {

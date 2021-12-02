@@ -136,17 +136,17 @@
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form>
+                       <form th:action="@{/employees/save}" th:object="${employee}" method="post">
                            <!-- 2 column grid layout with text inputs for the first and last names -->
                            <div class="row mb-4">
                             <div class="col">
                               <div class="form-outline">
-                                <input type="text" id="form6Example1" placeholder="Employee Name" class="form-control" />
+                                <input th:field="*{employeeName}" type="text" id="form6Example1" placeholder="Employee Name" class="form-control" />
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-outline">
-                                <input type="text" id="form6Example2" placeholder="Password" class="form-control"/>
+                                <input th:field="*{password}" type="text" id="form6Example2" placeholder="Password" class="form-control"/>
                               </div>
                             </div>
                           </div>
@@ -155,12 +155,12 @@
                         
                           <!-- Text input -->
                           <div class="form-outline mb-4">
-                            <input type="text" id="form6Example3" placeholder="Email Address" class="form-control" />
+                            <input th:field="*{email}" type="text" id="form6Example3" placeholder="Email Address" class="form-control" />
                           </div>
                         
                           <!-- Number input -->
                           <div class="form-outline mb-4">
-                            <input type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
+                            <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
                           </div>
                           
                           

@@ -136,29 +136,36 @@
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form>
+                       <form th:action="@{/vehicles/save}" th:object="${vehicle}" method="post">
                         <!-- 2 column grid layout with text inputs for the first and last names -->
                         <div class="row mb-4">
                           <div class="col">
                             <div class="form-outline">
-                              <input type="text" id="form6Example1" placeholder="Vehicle Number" class="form-control" />
+                              <input th:field="*{vehicleNumber}" type="text" id="form6Example1" placeholder="Vehicle Number" class="form-control" />
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-outline">
-                              <input type="text" id="form6Example2" placeholder="Capacity" class="form-control" />
+                              <input th:field="*{capacity}" type="text" id="form6Example2" placeholder="Capacity" class="form-control" />
                             </div>
                           </div>
                         </div>
                       
                         <!-- Text input -->
-                        <div class="form-outline mb-4">
-                          <input type="text" id="form6Example3" placeholder="Type" class="form-control" />
+                        <div class="=form-outline mb-3 form-group row pl-lg-2 pr-lg-3">
+                            <label class="p-1">Lorry Type :</label>
+                            <select th:field="*{type}" class="custom-select" >
+                                <option th:value="14Ft">14Ft</option>
+                                <option th:value="19Ft">19Ft</option>
+                                <option th:value="22Ft">22Ft</option>
+                                <option th:value="32Ft">32Ft</option>
+                                <option th:value="40">40FT</option>
+                            </select>
                         </div>
                       
                         <!-- Text input -->
                         <div class="form-outline mb-4">
-                          <input type="text" id="form6Example4" placeholder="Colour" class="form-control" />
+                          <input th:field="*{colour}" type="text" id="form6Example45" placeholder="Colour" class="form-control" />
                         </div>
                       
                        

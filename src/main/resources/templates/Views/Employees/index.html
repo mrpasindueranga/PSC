@@ -166,41 +166,20 @@
                                         <tbody>
                                             <tr th:each="employee: ${employees}">
                                                 <td data-label="ID" th:text="${employee.id}" />
-                                                <td data-label="Name" th:text="${employee.name}" />
+                                                <td data-label="Name" th:text="${employee.employeeName}" />
                                                 <td data-label="Email" th:text="${employee.email}" />
-                                                <td data-label="Contact Number">
+                                                <td data-label="Contact Number"th:text="${employee.contact}" />
                                                 <td data-label="Role">
-                                                    <h7 class="pt-1 pb-1 pr-2 pl-2 rounded role finance-officer">Finance
-                                                        Officer</h7>
+                                                    <h7 class="pt-1 pb-1 pr-2 pl-2 rounded role finance-officer" th:text="${employee.role}" />
                                                 </td>
-                                                <td data-label="Branch">B100</td>
+                                                <td data-label="Branch" th:text="${employee.branch.branchName}"/>
                                                 <td class="actions" data-label="Actions">
                                                     <i class="fas fa-trash delete"></i>
-                                                    <a th:href="@{/employees/update}"><i
+                                                    <a th:href="@{'/employees/edit/' + ${employee.id}}"
                                                             class="fas fa-pencil-alt edit"></i></a>
-                                                    <a th:href="@{/employees/assign}"><i
-                                                            class="fas fa-user-tag add"></i></a>
+                                                    
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td data-label="ID">E1B100</td>
-                                                <td>Andrew Adams</td>
-                                                <td>employee2@gmail.com</td>
-                                                <td>0713213213</td>
-                                                <td>
-                                                    <h7 class="pt-1 pb-1 pr-2 pl-2 rounded role collection-officer">
-                                                        Collection Officer</h7>
-                                                </td>
-                                                <td data-label="Branch">B100</td>
-                                                <td class="actions" data-label="Actions">
-                                                    <i class="fas fa-trash delete"></i>
-                                                    <a th:href="@{/employees/update}"><i
-                                                            class="fas fa-pencil-alt edit"></i></a>
-                                                    <a th:href="@{/employees/assign}"><i
-                                                            class="fas fa-user-tag add"></i></a>
-                                                </td>
-                                            </tr>
-
 
                                         </tbody>
                                     </table>

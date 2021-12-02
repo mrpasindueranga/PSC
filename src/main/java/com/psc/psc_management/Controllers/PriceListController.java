@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PriceList {
+public class PriceListController {
     @GetMapping("/paddy")
     public String index() {
         return "Views/Paddy/index";
