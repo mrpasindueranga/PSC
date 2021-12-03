@@ -157,12 +157,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td data-label="ID">1</td>
-                                        <td data-label="Vehno">LO-2548</td>
-                                        <td data-label="Capacity">2000</td>
-                                        <td data-label="Type">12ft</td>
-                                        <td data-label="Colour">White</td>
+                                    <tr th:each="vehicle: ${vehicles}">
+                                        <td data-label="ID" th:text="${vehicle.id}" />
+                                        <td data-label="Vehno" th:text="${vehicle.vehicleNumber}" />
+                                        <td data-label="Capacity" th:text="${vehicle.capacity}" />
+                                        <td data-label="Type" th:text="${vehicle.type}" />
+                                        <td data-label="Colour" th:text="${vehicle.colour}" />
                                         <td class="actions" data-label="Actions">
                                             <i class="fas fa-trash delete"></i>
                                             <a th:href="@{/vehicles/update}"><i class="fas fa-user-edit edit"></i></a>

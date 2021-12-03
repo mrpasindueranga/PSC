@@ -92,7 +92,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Naveen Nirmal</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Izny Uzman</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -129,70 +129,57 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Farmers</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Payment Page</h1>
+                        <a th:href="@{/finance/paid}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50 pr-2"></i> Completed Payments</a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form th:action="@{/farmers/save}" th:object="${farmer}" method="post">
-                       
-                        <div class="row mb-4">
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{farmer}" type="text" id="form6Example1" placeholder="Farmer's Name" class="form-control" />
+                       <div class="col-xl-12 col-lg-6 col-auto ml-1 mr-2">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Pay Requests Details</Details></h6>
                             </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{district}" type="text" id="form6Example2" placeholder="District" class="form-control" />
-                            </div>
-                          </div>
-                        </div>
-                      
-                       
-                        <div class="form-outline mb-4">
-                          <input th:field="*{address}" type="text" id="form6Example3" placeholder="Address" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{nic}" type="text" id="form6Example4" placeholder="NIC Number" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{email}" type="email" id="form6Example5" placeholder="Email Address" class="form-control" />
-                        </div>
-                      
-                        
-                        <div class="form-outline mb-4">
-                          <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
-                        </div>
-                       
-                        <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-outline">
-                                <input th:field="*{accno}" type="text" id="form6Example7" placeholder="Account Number" class="form-control" />
-                              </div>
-                            </div>
-                            
-                            
-                        </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <table class="table" id="Vehicle">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Farmer Name</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Units(kg)</th>
+                                        <th scope="col">Rate per killo(Rs)</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Controller</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td data-label="ID">1</td>
+                                        <td data-label="Vehno">Izny Uzman</td>
+                                        <td data-label="Capacity">28.11.2021</td>
+                                        <td data-label="Type">250</td>
+                                        <td data-label="Colour">56.00</td>
+                                        <td data-label="Amount">Rs.14,000.00</td>
+                                      <td><button type="button">Calculate</button></td>  
+                                     
+                                     <!--  <td class="actions" data-label="Actions"><br> <br> <br>
+                                            <i class="fas fa-trash delete"></i>
+                                            <a th:href="@{/vehicles/update}"><i class="fas fa-user-edit edit"></i></a>
+                                        </td>--> 
+                                        
+                                    </tr>
+                                    </tbody>
 
-                        <div class="=form-outline mb-4 form-group row pl-lg-2 pr-lg-3">
-                            <label class="p-1">Farmer Registerd Branch :</label>
-                            <select th:field="*{branch}" class="custom-select" >
-                                <option th:each="branch : ${branches}" th:value="${branch.id}" th:text="${branch.branchName}"></option>
-                            </select>
+                                </table>
+                            </div>
                         </div>
+                    </div>
                        
-                       
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Add Farmer</button>
-                      </form>
-
-                      <!-- end of code here -->
 
                     </div>
 

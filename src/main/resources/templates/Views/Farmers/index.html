@@ -161,16 +161,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td data-label="ID">1</td>
-                                        <td data-label="Name">Nirmal</td>
-                                        <td data-label="District">Galle</td>
-                                        <td data-label="Address">Galle</td>
-                                        <td data-label="NIC">000000000v</td>
-                                        <td data-label="E-Mail">farmer1@gmail.com</td>
-                                        <td data-label="Contact">0770000000</td>
-                                        <td data-label="Acc">00245744587</td>
-                                        <td data-label="Brunch">Galle</td>
+                                    <tr th:each="farmer: ${farmers}">
+                                        <td data-label="ID" th:text="${farmer.id}" />
+                                        <td data-label="Name" th:text="${farmer.farmer}" />
+                                        <td data-label="District" th:text="${farmer.district}" />
+                                        <td data-label="Address" th:text="${farmer.address}" />
+                                        <td data-label="NIC" th:text="${farmer.nic}" />
+                                        <td data-label="E-Mail" th:text="${farmer.email}" />
+                                        <td data-label="Contact" th:text="${farmer.contact}" />
+                                        <td data-label="Acc" th:text="${farmer.accno}" />
+                                        <td data-label="Brunch" th:text="${farmer.branch.branchName}" />
                                         <td class="actions" data-label="Actions">
                                             <i class="fas fa-trash delete"></i>
                                             <a th:href="@{/farmers/update}"><i class="fas fa-user-edit edit"></i></a>

@@ -92,7 +92,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Naveen Nirmal</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Izny Uzman</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -129,48 +129,54 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Update Employees</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Paid Payments</h1>
+                        
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form th:action="@{/employees/save}" th:object="${employee}" method="post">
-                           <!-- 2 column grid layout with text inputs for the first and last names -->
-                           <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-outline">
-                                <input th:field="*{employeeName}" type="text" id="form6Example1" placeholder="Employee Name" class="form-control" />
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="form-outline">
-                                <input th:field="*{password}" type="text" id="form6Example2" placeholder="Password" class="form-control"/>
-                              </div>
-                            </div>
-                          </div>
 
-                    
-                        
-                          <!-- Text input -->
-                          <div class="form-outline mb-4">
-                            <input th:field="*{email}" type="text" id="form6Example3" placeholder="Email Address" class="form-control" />
-                          </div>
-                        
-                          <!-- Number input -->
-                          <div class="form-outline mb-4">
-                            <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
-                          </div>
-                          
-                          
-                        
-                       
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Update Employee</button>
-                      </form>
 
-                      <!-- end of code here -->
+                        <div class="col-xl-12 col-lg-6 col-auto ml-1 mr-2">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Paid Payment Table</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <table class="table" id="employee">
+                                        <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Farmers Name</th>
+                                            <th scope="col">Units(Kg)</th>
+                                            <th scope="col">Buy Rate per killo(Rs)</th>
+                                            <th scope="col">Total Amount</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td data-label="ID">E1B100</td>
+                                            <td data-label="Farmers Name">Amaaz Ahamed</td>
+                                            <td data-label="Units(Kg">70</td>
+                                            <td data-label="Buy Rate">42.69</td>
+                                            <td data-label="Total Amount">Rs.2,988.30</td>
+                                             
+                                        </tr>
+                                       
+                                   
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
 
                     </div>
 

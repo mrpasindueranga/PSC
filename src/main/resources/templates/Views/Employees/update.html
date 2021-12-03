@@ -129,68 +129,45 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Farmers</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Employees</h1>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form th:action="@{/farmers/save}" th:object="${farmer}" method="post">
-                       
-                        <div class="row mb-4">
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{farmer}" type="text" id="form6Example1" placeholder="Farmer's Name" class="form-control" />
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{district}" type="text" id="form6Example2" placeholder="District" class="form-control" />
-                            </div>
-                          </div>
-                        </div>
-                      
-                       
-                        <div class="form-outline mb-4">
-                          <input th:field="*{address}" type="text" id="form6Example3" placeholder="Address" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{nic}" type="text" id="form6Example4" placeholder="NIC Number" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{email}" type="email" id="form6Example5" placeholder="Email Address" class="form-control" />
-                        </div>
-                      
+                       <!-- <form th:action="@{/employees/save}" th:object="${employee}" method="post">
                         
-                        <div class="form-outline mb-4">
-                          <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
-                        </div>
-                       
-                        <div class="row mb-4">
+                           <div class="row mb-4">
                             <div class="col">
                               <div class="form-outline">
-                                <input th:field="*{accno}" type="text" id="form6Example7" placeholder="Account Number" class="form-control" />
+                                <input th:field="*{employeeName}" type="text" id="form6Example1" placeholder="Employee Name" class="form-control" />
                               </div>
                             </div>
-                            
-                            
-                        </div>
+                            <div class="col">
+                              <div class="form-outline">
+                                <input th:field="*{password}" type="text" id="form6Example2" placeholder="Password" class="form-control"/>
+                              </div>
+                            </div>
+                          </div>
 
-                        <div class="=form-outline mb-4 form-group row pl-lg-2 pr-lg-3">
-                            <label class="p-1">Farmer Registerd Branch :</label>
-                            <select th:field="*{branch}" class="custom-select" >
-                                <option th:each="branch : ${branches}" th:value="${branch.id}" th:text="${branch.branchName}"></option>
-                            </select>
-                        </div>
+                    
+                        
+                          
+                          <div class="form-outline mb-4">
+                            <input th:field="*{email}" type="text" id="form6Example3" placeholder="Email Address" class="form-control" />
+                          </div>
+                      
+                          <div class="form-outline mb-4">
+                            <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
+                          </div>
+                          
+                          
+                        
                        
-                       
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Add Farmer</button>
-                      </form>
+                        <
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Update Employee</button>
+                      </form> -->
 
                       <!-- end of code here -->
 

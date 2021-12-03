@@ -129,26 +129,81 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Issue Paddy</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Create Issue Paddy Request</h1>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <!-- Nav Item - Account -->
-                       <li class="nav-item">
-                        <a class="nav-link" th:href="@{/issuepaddy/create}">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Add Issue Paddy Order </span></a>
-                        </li>
+                      
+                       <form th:action="@{/farmers/save}" th:object="${farmer}" method="post">
+                        
+                        <div class="row mb-4">
+                            <div class="col">
+                              <div class="=form-outline mb-2 form-group row pl-lg-2 pr-lg-3">
+                                  <label class="p-1">Branch Name :</label>
+                                  <select class="custom-select" >
+                                      <option>a</option>
+                                  </select>
+                              </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="form-outline">
+                                <label class="p-1" >Located</label>
+                              <input  type="text" id="form6Example2" placeholder="District" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                      
+                      
+                        <div class="form-outline mb-4">
+                          <input  type="text" id="form6Example3" placeholder="Address" class="form-control" />
+                        </div>
+                      
+                       
+                        <div class="=form-outline mb-2 form-group row pl-lg-2 pr-lg-3">
+                            <label class="p-1">Destination Branch Name:</label>
+                            <select class="custom-select" >
+                                <option>a</option>
+                            </select>
+                        </div>
+                      
+                      
+                        <div class="form-outline mb-4">
+                          <input type="email" id="form6Example5" placeholder="Quantity" class="form-control" />
+                        </div>
 
-                        <!-- Nav Item - Account -->
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{/issuepaddy/update}">
-                                <i class="fas fa-fw fa-table"></i>
-                                <span>Update Issue Paddy Order </span></a>
-                        </li>
+                        <div class="=form-outline mb-3 form-group row pl-lg-2 pr-lg-3">
+                            <label class="p-1">Business Type :</label>
+                            <select  class="custom-select" >
+                                <option >B2B</option>
+                                <option >B2C</option>
+                            </select>
+                        </div>
+                      
+                       
+                        <div class="form-outline mb-4">
+                          <input  type="number" id="form6Example6" placeholder="Vehicle No" class="form-control" />
+                        </div>
+                        
+                       
+                        <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <input  type="date" id="form6Example7" placeholder="Date" class="form-control" />
+                              </div>
+                            </div>
+                            
+                            
+                        </div>
+
+                        
+                       
+                        
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Send Paddy Issue Request</button>
+                      </form>
 
 
                     </div>

@@ -175,8 +175,7 @@
                                                 <td data-label="Branch" th:text="${employee.branch.branchName}"/>
                                                 <td class="actions" data-label="Actions">
                                                     <i class="fas fa-trash delete"></i>
-                                                    <a th:href="@{'/employees/edit/' + ${employee.id}}"
-                                                            class="fas fa-pencil-alt edit"></i></a>
+                                                    <a th:href="@{/employees/update}"><i class="fas fa-pencil-alt edit"></i></a>
                                                     
                                                 </td>
                                             </tr>

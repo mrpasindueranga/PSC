@@ -92,7 +92,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Naveen Nirmal</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Amaaz Ahamed</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -129,70 +129,57 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add Farmers</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Issue Paddy Request</h1>
+                        <a th:href="@{/inventory/issuedpaddy}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user-plus fa-sm text-white-50 pr-2"></i> Issued Paddy Details</a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                        <!-- Code Here -->
-                       <form th:action="@{/farmers/save}" th:object="${farmer}" method="post">
-                       
-                        <div class="row mb-4">
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{farmer}" type="text" id="form6Example1" placeholder="Farmer's Name" class="form-control" />
+                       <div class="col-xl-12 col-lg-6 col-auto ml-1 mr-2">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Paddy Issue Request Table</Details></h6>
                             </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-outline">
-                              <input th:field="*{district}" type="text" id="form6Example2" placeholder="District" class="form-control" />
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <table class="table" id="Vehicle">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Req.ID</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Selling Price</th>
+                                            <th scope="col">Quantity (Kg)</th>
+                                            <th scope="col">Business Type</th>
+                                            <th scope="col">Branch/Customer</th>
+                                            <th scope="col">Vehicle No</th>
+                                            <th scope="col">Controler</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td data-label="Req.ID">REQ.0001</td>
+                                            <td data-label="Date">1/12/2021</td>
+                                            <td data-label="Unit Price">70</td>
+                                            <td data-label="Quantity (Kg)">252</td>
+                                            <td data-label="Business Type">B2B</td>
+                                            <td data-label="Branch/Customer">Galle</td>
+                                            <td data-label="Vehicle No">TN 5901</td>
+                                            <td><button type="button">Proceed</button></td>  
+                                        </tr>
+                                        
+                                   
+                                       
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
                             </div>
-                          </div>
                         </div>
-                      
-                       
-                        <div class="form-outline mb-4">
-                          <input th:field="*{address}" type="text" id="form6Example3" placeholder="Address" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{nic}" type="text" id="form6Example4" placeholder="NIC Number" class="form-control" />
-                        </div>
-                      
-                     
-                        <div class="form-outline mb-4">
-                          <input th:field="*{email}" type="email" id="form6Example5" placeholder="Email Address" class="form-control" />
-                        </div>
-                      
                         
-                        <div class="form-outline mb-4">
-                          <input th:field="*{contact}" type="number" id="form6Example6" placeholder="Contact Number" class="form-control" />
-                        </div>
-                       
-                        <div class="row mb-4">
-                            <div class="col">
-                              <div class="form-outline">
-                                <input th:field="*{accno}" type="text" id="form6Example7" placeholder="Account Number" class="form-control" />
-                              </div>
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="=form-outline mb-4 form-group row pl-lg-2 pr-lg-3">
-                            <label class="p-1">Farmer Registerd Branch :</label>
-                            <select th:field="*{branch}" class="custom-select" >
-                                <option th:each="branch : ${branches}" th:value="${branch.id}" th:text="${branch.branchName}"></option>
-                            </select>
-                        </div>
-                       
-                       
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Add Farmer</button>
-                      </form>
-
-                      <!-- end of code here -->
 
                     </div>
 
